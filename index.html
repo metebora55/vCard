@@ -113,7 +113,7 @@
   </style>
 </head>
 <body>
-  <button class="toggle" onclick="toggleMode()">🌗 Mod Değiştir</button>
+  <button id="themeToggle" class="toggle" onclick="toggleMode()">Dark</button>
 
   <div class="card">
     <img class="profile-pic" src="profil.jpg" alt="Profil Fotoğrafı" />
@@ -133,16 +133,24 @@
   </div>
 
   <script>
-    function toggleMode() {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    const toggleBtn = document.getElementById('themeToggle');
+
+    function setButtonText() {
+      toggleBtn.textContent = document.body.classList.contains('dark') ? 'Light' : 'Dark';
     }
 
-    // Sayfa yüklendiğinde tema kontrolü
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+      setButtonText();
+    }
+
     (function() {
       if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark');
       }
+      setButtonText();
     })();
   </script>
 </body>
