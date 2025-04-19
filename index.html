@@ -1,48 +1,112 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Benim Kartvizitim</title>
   <style>
+    :root {
+      --bg: #f2f2f2;
+      --card-bg: #fff;
+      --accent: #4a90e2;
+      --text: #333;
+      --radius: 16px;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f3f3f3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
+
     .card {
-      background: white;
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 90%;
       text-align: center;
+      transition: 0.3s;
     }
-    .card img {
-      width: 100px;
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
     }
-    .card h1 {
-      margin: 0.5rem 0;
+
+    h1 {
+      margin: 1rem 0 0.5rem;
+      color: var(--text);
     }
-    .card a {
-      display: block;
-      margin-top: 10px;
+
+    p {
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 6px;
+      padding: 10px 18px;
+      border-radius: var(--radius);
       text-decoration: none;
-      color: #007BFF;
+      color: white;
+      background-color: var(--accent);
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+
+    .buttons a:hover {
+      background-color: #357ab8;
+    }
+
+    .social-icons {
+      margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+      margin: 0 8px;
+      color: var(--accent);
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <img src="https://via.placeholder.com/100" alt="Profil Foto">
+    <img class="profile-pic" src="https://via.placeholder.com/150" alt="Profil Fotoğrafı" />
     <h1>Ad Soyad</h1>
-    <p>Meslek veya Pozisyon</p>
-    <a href="mailto:eposta@ornek.com">eposta@ornek.com</a>
-    <a href="https://www.linkedin.com/in/kullanici">LinkedIn</a>
-    <a href="tel:+905551112233">+90 555 111 2233</a>
+    <p>Frontend Developer | UI Designer</p>
+
+    <div class="buttons">
+      <a href="mailto:eposta@ornek.com">E-posta</a>
+      <a href="tel:+905551112233">Ara</a>
+      <a href="https://linkedin.com/in/kullanici" target="_blank">LinkedIn</a>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://twitter.com" target="_blank">🐦</a>
+      <a href="https://github.com" target="_blank">🐙</a>
+      <a href="https://instagram.com" target="_blank">📸</a>
+    </div>
   </div>
 </body>
 </html>
