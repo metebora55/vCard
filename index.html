@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Benim Kartvizitim</title>
+  <!-- Font Awesome (ikon fontları) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
       --bg: #f2f2f2;
@@ -31,11 +33,6 @@
       max-width: 400px;
       width: 90%;
       text-align: center;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: scale(1.02);
     }
 
     .profile-pic {
@@ -77,10 +74,14 @@
     }
 
     .social-icons a {
-      margin: 0 8px;
+      margin: 0 12px;
       color: var(--accent);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #2c5fa3;
     }
 
     @media (max-width: 500px) {
@@ -92,20 +93,20 @@
 </head>
 <body>
   <div class="card">
-    <img class="profile-pic" src="https://via.placeholder.com/150" alt="Profil Fotoğrafı" />
+    <img class="profile-pic" src="profil.jpg" alt="Profil Fotoğrafı" />
     <h1>Ad Soyad</h1>
-    <p>Frontend Developer | UI Designer</p>
+    <p>Yazılım Geliştirici</p>
 
     <div class="buttons">
-      <a href="mailto:eposta@ornek.com">E-posta</a>
-      <a href="tel:+905551112233">Ara</a>
-      <a href="https://linkedin.com/in/kullanici" target="_blank">LinkedIn</a>
+      <a href="mailto:eposta@ornek.com"><i class="fa-solid fa-envelope"></i> E-posta</a>
+      <a href="tel:+905551112233"><i class="fa-solid fa-phone"></i> Ara</a>
     </div>
 
     <div class="social-icons">
-      <a href="https://twitter.com" target="_blank">🐦</a>
-      <a href="https://github.com" target="_blank">🐙</a>
-      <a href="https://instagram.com" target="_blank">📸</a>
+      <a href="https://github.com/kullanici" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/kullanici" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/kullanici" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/kullanici" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
 </body>
